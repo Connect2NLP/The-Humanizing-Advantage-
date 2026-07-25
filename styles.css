@@ -162,26 +162,63 @@ a { color: var(--accent-soft); text-decoration: none; }
   padding: 0 32px;
   text-align: center;
 }
-.video-hero-text {
-  max-width: 760px;
+.video-hero-text-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5em;
+  max-width: 900px;
+}
+.video-hero-line1 {
   margin: 0;
   font-family: "Ubuntu", "Segoe UI", sans-serif;
   font-weight: 300;
-  font-size: clamp(1.4rem, 3.4vw, 2.3rem);
-  line-height: 1.45;
+  text-transform: uppercase;
+  font-size: clamp(1.5rem, 3.9vw, 2.6rem);
+  line-height: 1.3;
   color: #f5f3eb;
-  letter-spacing: -0.005em;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
   opacity: 0;
   filter: blur(14px);
   transform: translateY(10px);
-  animation: heroTextClarify 3.5s ease-out forwards;
+  animation: heroTextClarify 3.5s ease-out forwards, heroGlow 3s ease-in-out 7s infinite;
+}
+.video-hero-line2 {
+  margin: 0;
+  font-family: "Ubuntu", "Segoe UI", sans-serif;
+  font-weight: 300;
+  font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+  line-height: 1.4;
+  color: #f5f3eb;
+  letter-spacing: -0.005em;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: heroLine2Rise 1s ease-out 6s forwards, heroGlow 3s ease-in-out 7s infinite;
 }
 @keyframes heroTextClarify {
   from { opacity: 0; filter: blur(14px); transform: translateY(10px); }
   to { opacity: 1; filter: blur(0); transform: translateY(0); }
 }
+@keyframes heroLine2Rise {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes heroGlow {
+  0%, 100% { text-shadow: 0 0 12px rgba(245, 243, 235, 0.15); }
+  50% { text-shadow: 0 0 26px rgba(245, 243, 235, 0.6), 0 0 44px rgba(193, 72, 26, 0.3); }
+}
+@media (max-width: 640px) {
+  .video-hero-line1 { white-space: normal; }
+}
 @media (prefers-reduced-motion: reduce) {
-  .video-hero-text { animation: none; opacity: 1; filter: none; transform: none; }
+  .video-hero-line1, .video-hero-line2 {
+    animation: none;
+    opacity: 1;
+    filter: none;
+    transform: none;
+    text-shadow: 0 0 16px rgba(245, 243, 235, 0.25);
+  }
 }
 
 /* Hero */
