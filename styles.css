@@ -187,7 +187,7 @@ a { color: var(--accent-soft); text-decoration: none; }
   opacity: 0;
   filter: blur(14px);
   transform: translateY(10px);
-  animation: heroTextClarify 3.5s ease-out forwards, heroGlow 3s ease-in-out 7s infinite, heroSparkle 3.2s linear 7s infinite;
+  animation: heroTextClarify 3.5s ease-out forwards, heroGlow 3s ease-in-out 7s infinite, heroSparkle 6.5s linear 7s infinite;
 }
 .video-hero-line2 {
   margin: 0;
@@ -204,7 +204,7 @@ a { color: var(--accent-soft); text-decoration: none; }
   -webkit-text-fill-color: transparent;
   opacity: 0;
   transform: translateY(40px);
-  animation: heroLine2Rise 1s ease-out 6s forwards, heroGlow 3s ease-in-out 7s infinite, heroSparkle 3.2s linear 7s infinite;
+  animation: heroLine2Rise 1s ease-out 6s forwards, heroGlow 3s ease-in-out 7s infinite, heroSparkle 6.5s linear 7s infinite;
 }
 .video-hero-name {
   margin: 0.7em 0 0;
@@ -222,7 +222,7 @@ a { color: var(--accent-soft); text-decoration: none; }
   opacity: 0;
   filter: blur(14px);
   transform: translateY(10px);
-  animation: heroTextClarify 3.5s ease-out 7s forwards, heroSparkle 3.2s linear 10.5s infinite;
+  animation: heroTextClarify 3.5s ease-out 7s forwards, heroSparkle 6.5s linear 10.5s infinite;
 }
 @keyframes heroTextClarify {
   from { opacity: 0; filter: blur(14px); transform: translateY(10px); }
