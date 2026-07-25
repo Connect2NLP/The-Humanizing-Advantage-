@@ -1,6 +1,6 @@
 :root {
   --bg: #f7eddc;
-  --bg-alt: #efe0c1;
+  --bg-alt: #efe7db;
   --surface: #fffdf8;
   --border: rgba(31, 42, 63, 0.14);
   --cream: #f7eddc;
@@ -36,8 +36,8 @@ h1, h2, h3 {
 }
 
 h1, h2 { font-weight: 300; letter-spacing: -0.01em; }
-h1 { font-size: clamp(2.4rem, 5.5vw, 4rem); }
-h2 { font-size: clamp(1.8rem, 3.4vw, 2.6rem); }
+h1 { font-size: clamp(1.8rem, 4.1vw, 3rem); }
+h2 { font-size: clamp(1.35rem, 2.55vw, 1.95rem); }
 h3 { font-size: 1.15rem; font-weight: 500; margin-bottom: 0.4em; color: var(--accent-soft); }
 
 p { margin: 0 0 1em; color: var(--text-muted); }
@@ -68,9 +68,9 @@ a { color: var(--accent-soft); text-decoration: none; }
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(247, 237, 220, 0.9);
+  background: rgba(31, 42, 63, 0.96);
   backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid rgba(247, 237, 220, 0.14);
 }
 
 .header-inner {
@@ -84,10 +84,10 @@ a { color: var(--accent-soft); text-decoration: none; }
   font-family: "Ubuntu", sans-serif;
   font-size: 1.15rem;
   letter-spacing: 0.06em;
-  color: var(--navy);
+  color: var(--cream);
   font-weight: 700;
 }
-.logo.small { font-size: 1rem; margin: 0; }
+.logo.small { font-size: 1rem; margin: 0; color: var(--text); }
 
 .main-nav {
   display: flex;
@@ -96,18 +96,22 @@ a { color: var(--accent-soft); text-decoration: none; }
 }
 
 .main-nav a {
-  color: var(--text-muted);
+  color: rgba(247, 237, 220, 0.72);
   font-size: 0.92rem;
 }
-.main-nav a:hover { color: var(--text); }
+.main-nav a:hover { color: var(--cream); }
+.main-nav a[aria-current="page"] {
+  color: var(--accent-soft);
+  font-weight: 600;
+}
 
 .nav-cta {
   padding: 8px 18px;
   border: 1px solid var(--accent);
   border-radius: 999px;
-  color: var(--accent-soft) !important;
+  color: #e0662f !important;
 }
-.nav-cta:hover { background: var(--accent); color: var(--bg) !important; }
+.nav-cta:hover { background: var(--accent); color: var(--cream) !important; }
 
 .nav-toggle {
   display: none;
@@ -121,7 +125,7 @@ a { color: var(--accent-soft); text-decoration: none; }
 .nav-toggle span {
   width: 24px;
   height: 2px;
-  background: var(--text);
+  background: var(--cream);
   display: block;
 }
 
@@ -402,8 +406,8 @@ a { color: var(--accent-soft); text-decoration: none; }
     top: 76px;
     left: 0;
     right: 0;
-    background: var(--bg);
-    border-bottom: 1px solid var(--border);
+    background: var(--navy);
+    border-bottom: 1px solid rgba(247, 237, 220, 0.14);
     flex-direction: column;
     align-items: flex-start;
     padding: 16px 24px 24px;

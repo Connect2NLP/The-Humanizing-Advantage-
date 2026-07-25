@@ -18,7 +18,9 @@ mainNav.querySelectorAll('a').forEach((link) => {
 const contactForm = document.getElementById('contactForm');
 const formNote = document.getElementById('formNote');
 
-contactForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  formNote.textContent = 'Thanks, this form isn\'t connected yet. Email julian@connect2nlp.com directly for now.';
-});
+if (contactForm) {
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    formNote.textContent = 'Thanks, this form isn\'t connected yet. Email julian@connect2nlp.com directly for now.';
+  });
+}
