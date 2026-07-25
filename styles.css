@@ -2,14 +2,14 @@
   --bg: #f2e9e0;
   --bg-alt: #db3a0d;
   --surface: #fffdf8;
-  --border: rgba(40, 48, 50, 0.14);
+  --border: rgba(34, 55, 46, 0.14);
   --cream: #f2e9e0;
-  --navy: #283032;
-  --text: #283032;
-  --text-muted: rgba(40, 48, 50, 0.66);
+  --navy: #22372e;
+  --text: #22372e;
+  --text-muted: rgba(34, 55, 46, 0.66);
   --accent: #c1481a;
   --accent-soft: #a83b15;
-  --chip-bg: rgba(40, 48, 50, 0.06);
+  --chip-bg: rgba(34, 55, 46, 0.06);
   --max-width: 1120px;
   --radius: 10px;
   font-size: 16px;
@@ -68,7 +68,7 @@ a { color: var(--accent-soft); text-decoration: none; }
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(40, 48, 50, 0.96);
+  background: rgba(34, 55, 46, 0.96);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid rgba(242, 233, 224, 0.14);
 }
@@ -137,7 +137,7 @@ a { color: var(--accent-soft); text-decoration: none; }
   padding: 120px 0 90px;
   background:
     radial-gradient(ellipse at top right, rgba(193,72,26,0.14), transparent 60%),
-    radial-gradient(ellipse at bottom left, rgba(40, 48, 50,0.07), transparent 55%),
+    radial-gradient(ellipse at bottom left, rgba(34, 55, 46,0.07), transparent 55%),
     var(--bg);
   border-bottom: 1px solid var(--border);
 }
@@ -150,7 +150,21 @@ a { color: var(--accent-soft); text-decoration: none; }
 .hero-inner { max-width: 780px; }
 .hero-sub { font-size: 1.2rem; max-width: 620px; }
 .hero-actions { display: flex; gap: 16px; margin-top: 2em; flex-wrap: wrap; }
-.hero-photo { max-width: 380px; justify-self: end; }
+.hero-photo {
+  max-width: 380px;
+  justify-self: end;
+  aspect-ratio: 3 / 4;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
 
 .btn {
   display: inline-block;
@@ -225,7 +239,7 @@ a { color: var(--accent-soft); text-decoration: none; }
   display: block;
 }
 .about-values {
-  background: linear-gradient(135deg, rgba(40, 48, 50,0.04), var(--surface));
+  background: linear-gradient(135deg, rgba(34, 55, 46,0.04), var(--surface));
   border: 1px solid var(--border);
   border-left: 3px solid var(--accent);
   border-radius: var(--radius);
@@ -386,7 +400,7 @@ a { color: var(--accent-soft); text-decoration: none; }
 .site-footer {
   padding: 36px 0;
   border-top: 1px solid rgba(242, 233, 224, 0.18);
-  background: var(--bg-alt);
+  background: var(--navy);
 }
 .site-footer .logo.small { color: #f2e9e0; }
 .footer-inner {
