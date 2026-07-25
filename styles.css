@@ -151,7 +151,7 @@ a { color: var(--accent-soft); text-decoration: none; }
 .video-hero-scrim {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(34, 55, 46, 0.4), rgba(34, 55, 46, 0.5) 55%, rgba(34, 55, 46, 0.72));
+  background: linear-gradient(180deg, rgba(34, 55, 46, 0.47), rgba(34, 55, 46, 0.57) 55%, rgba(34, 55, 46, 0.78));
 }
 .video-hero-content {
   position: relative;
