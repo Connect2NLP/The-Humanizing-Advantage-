@@ -196,6 +196,19 @@ a { color: var(--accent-soft); text-decoration: none; }
   transform: translateY(40px);
   animation: heroLine2Rise 1s ease-out 6s forwards, heroGlow 3s ease-in-out 7s infinite;
 }
+.video-hero-name {
+  margin: 0.7em 0 0;
+  font-family: "Ubuntu", "Segoe UI", sans-serif;
+  font-weight: 500;
+  font-size: clamp(0.85rem, 1.7vw, 1.05rem);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  opacity: 0;
+  filter: blur(14px);
+  transform: translateY(10px);
+  animation: heroTextClarify 3.5s ease-out 7s forwards;
+}
 @keyframes heroTextClarify {
   from { opacity: 0; filter: blur(14px); transform: translateY(10px); }
   to { opacity: 1; filter: blur(0); transform: translateY(0); }
@@ -218,6 +231,12 @@ a { color: var(--accent-soft); text-decoration: none; }
     filter: none;
     transform: none;
     text-shadow: 0 0 16px rgba(245, 243, 235, 0.25);
+  }
+  .video-hero-name {
+    animation: none;
+    opacity: 1;
+    filter: none;
+    transform: none;
   }
 }
 
