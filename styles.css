@@ -1,6 +1,6 @@
 :root {
   --bg: #f5f3eb;
-  --bg-alt: #db3a0d;
+  --bg-alt: #bf251a;
   --surface: #fffdf8;
   --border: rgba(34, 55, 46, 0.14);
   --cream: #f5f3eb;
@@ -32,13 +32,27 @@ h1, h2, h3 {
   font-family: "Ubuntu", "Segoe UI", sans-serif;
   line-height: 1.15;
   margin: 0 0 0.6em;
-  color: var(--text);
+  background-size: 260% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: heroSparkle 6.5s linear infinite;
+}
+h1 {
+  background-image: linear-gradient(100deg, var(--text) 0%, var(--text) 35%, color-mix(in srgb, var(--text) 45%, white) 50%, var(--text) 65%, var(--text) 100%);
+}
+h2, h3 {
+  background-image: linear-gradient(100deg, var(--accent-soft) 0%, var(--accent-soft) 35%, color-mix(in srgb, var(--accent-soft) 45%, white) 50%, var(--accent-soft) 65%, var(--accent-soft) 100%);
 }
 
 h1, h2 { font-weight: 300; letter-spacing: -0.01em; }
 h1 { font-size: clamp(1.8rem, 4.1vw, 3rem); }
-h2 { font-size: clamp(1.35rem, 2.55vw, 1.95rem); color: var(--accent-soft); }
-h3 { font-size: 1.15rem; font-weight: 500; margin-bottom: 0.4em; color: var(--accent-soft); }
+h2 { font-size: clamp(1.35rem, 2.55vw, 1.95rem); }
+h3 { font-size: 1.15rem; font-weight: 500; margin-bottom: 0.4em; }
+@media (prefers-reduced-motion: reduce) {
+  h1, h2, h3 { animation: none; }
+}
 
 p { margin: 0 0 1em; color: var(--text-muted); }
 .lead { font-size: 1.15rem; color: var(--text); }
@@ -174,7 +188,7 @@ a { color: var(--accent-soft); text-decoration: none; }
   font-family: "Ubuntu", "Segoe UI", sans-serif;
   font-weight: 300;
   text-transform: uppercase;
-  font-size: clamp(1rem, 2.6vw, 1.75rem);
+  font-size: clamp(1.25rem, 3.25vw, 2.19rem);
   line-height: 1.3;
   letter-spacing: 0.02em;
   white-space: nowrap;
@@ -193,7 +207,7 @@ a { color: var(--accent-soft); text-decoration: none; }
   margin: 0;
   font-family: "Ubuntu", "Segoe UI", sans-serif;
   font-weight: 300;
-  font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+  font-size: clamp(1.38rem, 3.13vw, 2rem);
   line-height: 1.4;
   letter-spacing: -0.005em;
   background: linear-gradient(100deg, #cbc0a4 0%, #f5f3eb 25%, #fffdf6 50%, #f5f3eb 75%, #cbc0a4 100%);
@@ -210,7 +224,7 @@ a { color: var(--accent-soft); text-decoration: none; }
   margin: 0.7em 0 0;
   font-family: "Ubuntu", "Segoe UI", sans-serif;
   font-weight: 400;
-  font-size: clamp(0.85rem, 1.7vw, 1.05rem);
+  font-size: clamp(1.06rem, 2.13vw, 1.31rem);
   letter-spacing: 0.06em;
   text-transform: uppercase;
   background: linear-gradient(100deg, #bf251a 0%, #bf251a 35%, #ffb0a3 48%, #bf251a 61%, #bf251a 100%);
@@ -278,12 +292,14 @@ a { color: var(--accent-soft); text-decoration: none; }
 .hero-sub { font-size: 1.2rem; max-width: 620px; }
 .hero-actions { display: flex; gap: 16px; margin-top: 2em; flex-wrap: wrap; }
 .hero-photo {
+  position: relative;
   max-width: 380px;
   justify-self: end;
   aspect-ratio: 3 / 4;
   border-radius: var(--radius);
   overflow: hidden;
   border: 1px solid var(--border);
+  animation: photoGlow 4.5s ease-in-out infinite;
 }
 .hero-photo img {
   width: 100%;
@@ -291,6 +307,17 @@ a { color: var(--accent-soft); text-decoration: none; }
   object-fit: cover;
   object-position: top center;
   display: block;
+  animation: photoKenBurns 14s ease-in-out infinite alternate;
+}
+.hero-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 40%, rgba(255, 255, 255, 0.5) 50%, transparent 60%);
+  background-size: 250% 100%;
+  animation: heroSparkle 5s linear infinite;
+  mix-blend-mode: overlay;
+  pointer-events: none;
 }
 
 .btn {
@@ -352,18 +379,44 @@ a { color: var(--accent-soft); text-decoration: none; }
   margin-bottom: 50px;
 }
 .about-photo {
+  position: relative;
   max-width: 320px;
   aspect-ratio: 4 / 5;
   border-radius: var(--radius);
   overflow: hidden;
   border: 1px solid var(--border);
   background: var(--surface);
+  animation: photoGlow 4.5s ease-in-out infinite;
 }
 .about-photo img {
   width: 100%;
   height: 100%;
   object-fit: contain;
   display: block;
+  animation: photoKenBurns 14s ease-in-out infinite alternate;
+}
+.about-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 40%, rgba(255, 255, 255, 0.5) 50%, transparent 60%);
+  background-size: 250% 100%;
+  animation: heroSparkle 5s linear infinite;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+@keyframes photoKenBurns {
+  from { transform: scale(1); }
+  to { transform: scale(1.07); }
+}
+@keyframes photoGlow {
+  0%, 100% { box-shadow: 0 0 0 rgba(191, 37, 26, 0); }
+  50% { box-shadow: 0 0 28px rgba(191, 37, 26, 0.35); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-photo, .about-photo, .hero-photo img, .about-photo img, .hero-photo::after, .about-photo::after {
+    animation: none;
+  }
 }
 .about-values {
   background: linear-gradient(135deg, rgba(34, 55, 46,0.04), var(--surface));
