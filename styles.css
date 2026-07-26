@@ -7,7 +7,7 @@
   --navy: #22372e;
   --text: #22372e;
   --text-muted: rgba(34, 55, 46, 0.66);
-  --accent: #c1481a;
+  --accent: #bf251a;
   --accent-soft: #a83b15;
   --chip-bg: rgba(34, 55, 46, 0.06);
   --max-width: 1120px;
@@ -213,7 +213,7 @@ a { color: var(--accent-soft); text-decoration: none; }
   font-size: clamp(0.85rem, 1.7vw, 1.05rem);
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  background: linear-gradient(100deg, #c1481a 0%, #c1481a 35%, #ffd9ab 48%, #c1481a 61%, #c1481a 100%);
+  background: linear-gradient(100deg, #bf251a 0%, #bf251a 35%, #ffd9ab 48%, #bf251a 61%, #bf251a 100%);
   background-size: 260% 100%;
   -webkit-background-clip: text;
   background-clip: text;
@@ -234,7 +234,7 @@ a { color: var(--accent-soft); text-decoration: none; }
 }
 @keyframes heroGlow {
   0%, 100% { text-shadow: 0 0 18px rgba(245, 243, 235, 0.3); }
-  50% { text-shadow: 0 0 36px rgba(245, 243, 235, 0.9), 0 0 62px rgba(193, 72, 26, 0.55), 0 0 90px rgba(193, 72, 26, 0.25); }
+  50% { text-shadow: 0 0 36px rgba(245, 243, 235, 0.9), 0 0 62px rgba(191, 37, 26, 0.55), 0 0 90px rgba(191, 37, 26, 0.25); }
 }
 @keyframes heroSparkle {
   from { background-position: 200% 0; }
@@ -263,7 +263,7 @@ a { color: var(--accent-soft); text-decoration: none; }
 .hero {
   padding: 120px 0 90px;
   background:
-    radial-gradient(ellipse at top right, rgba(193,72,26,0.14), transparent 60%),
+    radial-gradient(ellipse at top right, rgba(191, 37, 26,0.14), transparent 60%),
     radial-gradient(ellipse at bottom left, rgba(34, 55, 46,0.07), transparent 55%),
     var(--bg);
   border-bottom: 1px solid var(--border);
