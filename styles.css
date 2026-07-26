@@ -250,7 +250,7 @@ a { color: var(--accent-soft); text-decoration: none; }
   line-height: 1.3;
   letter-spacing: 0.02em;
   white-space: nowrap;
-  background: linear-gradient(100deg, #0b4a58 0%, #157B93 22%, #5fd4ec 50%, #157B93 78%, #0b4a58 100%);
+  background: linear-gradient(100deg, #157B93 0%, #f5f3eb 25%, #fffdf6 50%, #f5f3eb 75%, #157B93 100%);
   background-size: 260% 100%;
   -webkit-background-clip: text;
   background-clip: text;
@@ -268,7 +268,7 @@ a { color: var(--accent-soft); text-decoration: none; }
   font-size: clamp(1.84rem, 4.17vw, 2.67rem);
   line-height: 1.4;
   letter-spacing: -0.005em;
-  background: linear-gradient(100deg, #0b4a58 0%, #157B93 22%, #5fd4ec 50%, #157B93 78%, #0b4a58 100%);
+  background: linear-gradient(100deg, #157B93 0%, #f5f3eb 25%, #fffdf6 50%, #f5f3eb 75%, #157B93 100%);
   background-size: 260% 100%;
   -webkit-background-clip: text;
   background-clip: text;
