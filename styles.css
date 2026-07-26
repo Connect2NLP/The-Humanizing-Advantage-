@@ -45,6 +45,9 @@ h1 {
 h2, h3 {
   background-image: linear-gradient(100deg, var(--accent-soft) 0%, var(--accent-soft) 35%, color-mix(in srgb, var(--accent-soft) 45%, white) 50%, var(--accent-soft) 65%, var(--accent-soft) 100%);
 }
+.story-heading {
+  background-image: linear-gradient(100deg, #157B93 0%, #157B93 35%, color-mix(in srgb, #157B93 45%, white) 50%, #157B93 65%, #157B93 100%);
+}
 
 h1, h2 { font-weight: 300; letter-spacing: -0.01em; }
 h1 { font-size: clamp(2.4rem, 5.47vw, 4rem); }
@@ -414,6 +417,10 @@ a { color: var(--accent-soft); text-decoration: none; }
 
 /* Sections */
 .section { padding: 90px 0; }
+
+.story-copy { max-width: 720px; margin-top: 2em; }
+.story-copy p { margin-bottom: 1.3em; }
+.story-punch { font-weight: 600; color: var(--text); }
 
 .section-alt {
   background: var(--navy);
