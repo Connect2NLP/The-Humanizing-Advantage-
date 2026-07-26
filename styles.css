@@ -8,7 +8,7 @@
   --text: #22372e;
   --text-muted: rgba(34, 55, 46, 0.66);
   --accent: #bf251a;
-  --accent-soft: #a83b15;
+  --accent-soft: #8f1f16;
   --chip-bg: rgba(34, 55, 46, 0.06);
   --max-width: 1120px;
   --radius: 10px;
@@ -37,7 +37,7 @@ h1, h2, h3 {
 
 h1, h2 { font-weight: 300; letter-spacing: -0.01em; }
 h1 { font-size: clamp(1.8rem, 4.1vw, 3rem); }
-h2 { font-size: clamp(1.35rem, 2.55vw, 1.95rem); }
+h2 { font-size: clamp(1.35rem, 2.55vw, 1.95rem); color: var(--accent-soft); }
 h3 { font-size: 1.15rem; font-weight: 500; margin-bottom: 0.4em; color: var(--accent-soft); }
 
 p { margin: 0 0 1em; color: var(--text-muted); }
@@ -327,7 +327,7 @@ a { color: var(--accent-soft); text-decoration: none; }
   --surface: rgba(245, 243, 235, 0.06);
   --bg-alt: rgba(245, 243, 235, 0.12);
   --border: rgba(245, 243, 235, 0.18);
-  --accent-soft: #e0662f;
+  --accent-soft: #ff7a5e;
   --chip-bg: rgba(245, 243, 235, 0.08);
 }
 
