@@ -4,7 +4,7 @@
   --surface: #fffdf8;
   --border: rgba(34, 55, 46, 0.14);
   --cream: #f5f3eb;
-  --navy: #2b4038;
+  --navy: #030303;
   --text: #22372e;
   --text-muted: rgba(34, 55, 46, 0.66);
   --accent: #bf251a;
@@ -82,7 +82,7 @@ a { color: var(--accent-soft); text-decoration: none; }
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(43, 64, 56, 0.96);
+  background: rgba(3, 3, 3, 0.96);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid rgba(245, 243, 235, 0.14);
 }
@@ -223,7 +223,7 @@ a { color: var(--accent-soft); text-decoration: none; }
 .video-hero-scrim {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(43, 64, 56, 0.47), rgba(43, 64, 56, 0.57) 55%, rgba(43, 64, 56, 0.78));
+  background: linear-gradient(180deg, rgba(3, 3, 3, 0.47), rgba(3, 3, 3, 0.57) 55%, rgba(3, 3, 3, 0.78));
 }
 .video-hero-content {
   position: relative;
@@ -250,7 +250,7 @@ a { color: var(--accent-soft); text-decoration: none; }
   line-height: 1.3;
   letter-spacing: 0.02em;
   white-space: nowrap;
-  background: linear-gradient(100deg, #cbc0a4 0%, #f5f3eb 25%, #fffdf6 50%, #f5f3eb 75%, #cbc0a4 100%);
+  background: linear-gradient(100deg, #0b4a58 0%, #157B93 22%, #5fd4ec 50%, #157B93 78%, #0b4a58 100%);
   background-size: 260% 100%;
   -webkit-background-clip: text;
   background-clip: text;
@@ -268,7 +268,7 @@ a { color: var(--accent-soft); text-decoration: none; }
   font-size: clamp(1.84rem, 4.17vw, 2.67rem);
   line-height: 1.4;
   letter-spacing: -0.005em;
-  background: linear-gradient(100deg, #cbc0a4 0%, #f5f3eb 25%, #fffdf6 50%, #f5f3eb 75%, #cbc0a4 100%);
+  background: linear-gradient(100deg, #0b4a58 0%, #157B93 22%, #5fd4ec 50%, #157B93 78%, #0b4a58 100%);
   background-size: 260% 100%;
   -webkit-background-clip: text;
   background-clip: text;
@@ -528,6 +528,30 @@ a { color: var(--accent-soft); text-decoration: none; }
   border: 1px solid var(--border);
   border-radius: 999px;
   padding: 4px 12px;
+}
+
+/* Choice grid (What's Changing?) */
+.choice-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-top: 2.5em;
+}
+.choice-chip {
+  display: block;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 22px;
+  color: var(--text);
+  font-size: 1.02rem;
+  font-weight: 500;
+  transition: border-color 0.15s ease, transform 0.15s ease, background 0.15s ease;
+}
+.choice-chip:hover {
+  border-color: var(--accent);
+  background: var(--chip-bg);
+  transform: translateY(-2px);
 }
 
 /* Services */
