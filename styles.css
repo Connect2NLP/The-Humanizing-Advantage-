@@ -565,11 +565,20 @@ a { color: var(--accent-soft); text-decoration: none; }
 /* Advantage cards (10 Human Advantages) */
 .advantage-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
   margin-top: 2.5em;
+  align-items: stretch;
+}
+@media (max-width: 900px) {
+  .advantage-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .advantage-grid { grid-template-columns: 1fr; }
 }
 .advantage-card {
+  display: flex;
+  flex-direction: column;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -613,17 +622,14 @@ a { color: var(--accent-soft); text-decoration: none; }
 /* Flip cards (Events / Advantage Series) */
 .flip-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 16px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
   margin-top: 2.5em;
 }
 @media (max-width: 760px) {
-  .flip-grid { grid-template-columns: repeat(3, 1fr); }
-}
-@media (max-width: 560px) {
   .flip-grid { grid-template-columns: repeat(2, 1fr); }
 }
-@media (max-width: 380px) {
+@media (max-width: 460px) {
   .flip-grid { grid-template-columns: 1fr; }
 }
 .flip-card {
