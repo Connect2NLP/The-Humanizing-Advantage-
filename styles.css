@@ -525,6 +525,74 @@ a { color: var(--accent-soft); text-decoration: none; }
 .about-values ul { margin: 0; padding-left: 20px; color: var(--text-muted); columns: 2; column-gap: 32px; }
 .about-values li { margin-bottom: 0.7em; break-inside: avoid; }
 
+/* Topic pages: bullet lists, outcomes, quotes */
+.topic-image {
+  max-width: 720px;
+  margin: 2em 0 2.5em;
+}
+.topic-extras {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  margin: 2.5em 0;
+}
+.topic-extras h3 { margin-bottom: 0.6em; }
+.section-list {
+  list-style: disc;
+  margin: 0;
+  padding-left: 20px;
+  color: var(--text-muted);
+  columns: 2;
+  column-gap: 24px;
+}
+.section-list li { margin-bottom: 0.6em; break-inside: avoid; }
+.outcomes-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  columns: 2;
+  column-gap: 24px;
+}
+.outcomes-list li {
+  margin-bottom: 0.6em;
+  break-inside: avoid;
+  color: var(--text);
+}
+.outcomes-list li::before {
+  content: "\2714";
+  color: var(--accent);
+  font-weight: 700;
+  margin-right: 8px;
+}
+.quote-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin: 2.5em 0;
+}
+.quote-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 28px;
+  margin: 0;
+}
+.quote-card p {
+  margin: 0 0 0.8em;
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--text);
+  line-height: 1.5;
+}
+.quote-card cite {
+  display: block;
+  font-style: normal;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--accent-soft);
+}
+
 /* Audience grid */
 .audience-grid {
   display: grid;
