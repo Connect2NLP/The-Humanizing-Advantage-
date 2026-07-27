@@ -571,6 +571,24 @@ a { color: var(--accent-soft); text-decoration: none; }
   text-transform: uppercase;
 }
 
+.story-subheading {
+  margin: 0 0 1em;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--accent-soft);
+}
+
+.closing-question {
+  max-width: 780px;
+  margin: 3em auto 0;
+  font-size: clamp(1.3rem, 2.8vw, 1.9rem);
+  font-weight: 600;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--accent);
+  text-align: center;
+}
+
 /* Advantage cards (10 Human Advantages) */
 .advantage-grid {
   display: grid;
