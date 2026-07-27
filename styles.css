@@ -347,9 +347,13 @@ a { color: var(--accent-soft); text-decoration: none; }
 }
 .video-hero-subtitle-tagline {
   margin: 0 0 0.5em;
-  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  font-size: clamp(0.75rem, 2.1vw, 1.9rem);
   font-weight: 300;
   color: #FFFFFF;
+  white-space: nowrap;
+}
+@media (max-width: 480px) {
+  .video-hero-subtitle-tagline { white-space: normal; }
 }
 .video-hero-subtitle-desc {
   margin: 0 auto;
