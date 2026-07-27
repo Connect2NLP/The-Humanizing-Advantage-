@@ -803,7 +803,14 @@ a { color: var(--accent-soft); text-decoration: none; }
   transition: background 0.15s ease;
 }
 .service-item:hover { background: rgba(253, 251, 245, 0.06); }
-.service-item p { margin: 0; font-size: 0.95rem; }
+.service-item p { margin: 0 0 0.8em; font-size: 0.95rem; }
+.service-more-link {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent-soft);
+}
+.service-more-link:hover { text-decoration: underline; }
 
 /* Flip cards (Events / Advantage Series) */
 .flip-grid {
