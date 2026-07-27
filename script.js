@@ -15,6 +15,46 @@ mainNav.querySelectorAll('a').forEach((link) => {
   });
 });
 
+const typewriters = document.querySelectorAll('[data-typewriter]');
+if (typewriters.length && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const queue = [];
+  let typing = false;
+
+  const processQueue = () => {
+    if (typing || !queue.length) return;
+    typing = true;
+    const el = queue.shift();
+    const text = el.getAttribute('data-typewriter');
+    el.textContent = '';
+    el.classList.add('typewriter-active');
+    let i = 0;
+    const tick = () => {
+      el.textContent = text.slice(0, i);
+      i++;
+      if (i <= text.length) {
+        setTimeout(tick, 18);
+      } else {
+        el.classList.remove('typewriter-active');
+        typing = false;
+        processQueue();
+      }
+    };
+    tick();
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        queue.push(entry.target);
+        observer.unobserve(entry.target);
+      }
+    });
+    processQueue();
+  }, { threshold: 0.4 });
+
+  typewriters.forEach((el) => observer.observe(el));
+}
+
 const contactForm = document.getElementById('contactForm');
 const formNote = document.getElementById('formNote');
 

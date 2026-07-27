@@ -428,6 +428,25 @@ a { color: var(--accent-soft); text-decoration: none; }
 
 .story-copy { max-width: 720px; margin-top: 2em; }
 .story-copy p { margin-bottom: 1.3em; }
+
+.typewriter { white-space: pre-line; }
+.typewriter-active::after {
+  content: "";
+  display: inline-block;
+  width: 0.5em;
+  height: 1em;
+  margin-left: 2px;
+  background: var(--accent);
+  vertical-align: text-bottom;
+  animation: typewriterBlink 0.8s steps(1) infinite;
+}
+@keyframes typewriterBlink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .typewriter-active::after { animation: none; display: none; }
+}
 .story-punch { font-weight: 600; color: var(--text); }
 
 .section-alt {
