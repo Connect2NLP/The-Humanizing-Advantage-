@@ -580,6 +580,17 @@ a { color: var(--accent-soft); text-decoration: none; }
   max-width: 720px;
   margin: 2em 0 2.5em;
 }
+.topic-image-photo {
+  overflow: hidden;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+.topic-image-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 .topic-extras {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
