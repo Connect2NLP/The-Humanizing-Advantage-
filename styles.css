@@ -661,14 +661,13 @@ a { color: var(--accent-soft); text-decoration: none; }
 }
 
 .story-subheading {
-  display: inline;
+  display: inline-block;
   margin: 0 0 1em;
   font-size: 1.3rem;
   font-weight: 600;
   color: var(--navy);
-  background-image: linear-gradient(transparent 62%, var(--yellow) 62%);
-  box-decoration-break: clone;
-  -webkit-box-decoration-break: clone;
+  border-bottom: 4px solid var(--yellow);
+  padding-bottom: 0.15em;
 }
 
 .closing-question {
