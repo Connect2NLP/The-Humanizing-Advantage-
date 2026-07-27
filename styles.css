@@ -137,6 +137,8 @@ a { color: var(--accent-soft); text-decoration: none; }
   color: transparent;
   -webkit-text-fill-color: transparent;
   animation: heroSparkle 6.5s linear infinite;
+  text-shadow: 0 0 0 rgba(232, 86, 1, 0);
+  transition: text-shadow 0.35s ease, animation-duration 0.35s ease;
 }
 .main-nav > a[aria-current="page"], .nav-dropdown-toggle[aria-current="page"] {
   background-image: linear-gradient(100deg, var(--accent) 0%, var(--accent) 35%, color-mix(in srgb, var(--accent) 45%, white) 50%, var(--accent) 65%, var(--accent) 100%);
@@ -150,8 +152,15 @@ a { color: var(--accent-soft); text-decoration: none; }
   -webkit-text-fill-color: initial;
   animation: none;
 }
-.main-nav a:hover { filter: brightness(1.35); }
-.nav-cta:hover { filter: none; }
+.main-nav > a:hover, .nav-dropdown-toggle:hover {
+  background-image: linear-gradient(100deg, var(--accent) 0%, var(--accent) 35%, color-mix(in srgb, var(--accent) 45%, white) 50%, var(--accent) 65%, var(--accent) 100%);
+  text-shadow: 0 0 12px rgba(232, 86, 1, 0.85), 0 0 26px rgba(232, 86, 1, 0.5), 0 0 2px rgba(255, 255, 255, 0.8);
+  animation-duration: 2.2s;
+}
+.main-nav > a[aria-current="page"]:hover, .nav-dropdown-toggle[aria-current="page"]:hover {
+  text-shadow: 0 0 12px rgba(58, 122, 70, 0.85), 0 0 26px rgba(58, 122, 70, 0.5), 0 0 2px rgba(255, 255, 255, 0.8);
+}
+.nav-cta:hover { text-shadow: none; }
 @media (prefers-reduced-motion: reduce) {
   .main-nav > a, .nav-dropdown-toggle { animation: none; }
 }
