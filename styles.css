@@ -248,7 +248,7 @@ a { color: var(--accent-soft); text-decoration: none; }
   margin: 0;
   font-family: "Ubuntu", "Segoe UI", sans-serif;
   font-weight: 300;
-  font-size: clamp(1.2rem, 2.6vw, 1.9rem);
+  font-size: clamp(1.76rem, 3.82vw, 2.78rem);
   line-height: 1.4;
   letter-spacing: 0.01em;
   background: linear-gradient(100deg, #E85601 0%, #FDFBF5 25%, #FFFFFF 50%, #FDFBF5 75%, #E85601 100%);
@@ -266,7 +266,8 @@ a { color: var(--accent-soft); text-decoration: none; }
   margin: 0;
   font-family: "Ubuntu", "Segoe UI", sans-serif;
   font-weight: 300;
-  font-size: clamp(1.3rem, 2.9vw, 2.1rem);
+  font-size: clamp(1.76rem, 3.82vw, 2.78rem);
+  white-space: nowrap;
   line-height: 1.4;
   letter-spacing: -0.005em;
   background: linear-gradient(100deg, #E85601 0%, #FDFBF5 25%, #FFFFFF 50%, #FDFBF5 75%, #E85601 100%);
@@ -312,6 +313,9 @@ a { color: var(--accent-soft); text-decoration: none; }
 @keyframes heroSparkle {
   from { background-position: 200% 0; }
   to { background-position: -200% 0; }
+}
+@media (max-width: 640px) {
+  .video-hero-line2 { white-space: normal; }
 }
 @media (prefers-reduced-motion: reduce) {
   .video-hero-line1, .video-hero-line2 {
