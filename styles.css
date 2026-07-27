@@ -661,13 +661,10 @@ a { color: var(--accent-soft); text-decoration: none; }
 }
 
 .story-subheading {
-  display: inline-block;
   margin: 0 0 1em;
   font-size: 1.3rem;
   font-weight: 600;
-  color: var(--navy);
-  border-bottom: 4px solid var(--green);
-  padding-bottom: 0.15em;
+  color: var(--green);
 }
 
 .closing-question {
