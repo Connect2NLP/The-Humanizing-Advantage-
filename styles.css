@@ -106,11 +106,7 @@ a { color: var(--accent-soft); text-decoration: none; }
 .logo {
   display: inline-flex;
   align-items: center;
-  margin-left: -4px;
-  padding: 7px 16px;
-  background: var(--navy);
-  border-radius: 12px;
-  box-shadow: 0 6px 16px rgba(0, 41, 50, 0.22);
+  margin-left: -16px;
 }
 .logo-img {
   height: 46px;
