@@ -1,7 +1,7 @@
 :root {
-  --bg: #FDFBF5;
+  --bg: #F4F9F6;
   --bg-alt: #E85601;
-  --surface: #FFFFFF;
+  --surface: #F4F9F6;
   --border: rgba(2, 25, 73, 0.14);
   --cream: #FDFBF5;
   --navy: #02194A;
@@ -44,7 +44,7 @@ h1 {
   background-image: linear-gradient(100deg, var(--text) 0%, var(--text) 35%, color-mix(in srgb, var(--text) 45%, white) 50%, var(--text) 65%, var(--text) 100%);
 }
 h2, h3 {
-  background-image: linear-gradient(100deg, var(--accent-soft) 0%, var(--accent-soft) 35%, color-mix(in srgb, var(--accent-soft) 45%, white) 50%, var(--accent-soft) 65%, var(--accent-soft) 100%);
+  background-image: linear-gradient(100deg, var(--green) 0%, var(--green) 35%, color-mix(in srgb, var(--green) 45%, white) 50%, var(--green) 65%, var(--green) 100%);
 }
 .section-alt h2 {
   background-image: linear-gradient(100deg, var(--green) 0%, var(--green) 35%, color-mix(in srgb, var(--green) 45%, white) 50%, var(--green) 65%, var(--green) 100%);
@@ -507,13 +507,13 @@ a { color: var(--accent-soft); text-decoration: none; }
 .story-punch { font-weight: 600; color: var(--text); }
 
 .section-alt {
-  background: #FCF6D2;
+  background: #F4F9F6;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
 
 .section-light {
-  background: #EEF2FA;
+  background: #F4F9F6;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
