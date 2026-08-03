@@ -1630,12 +1630,31 @@ a { color: var(--highlight); text-decoration: none; }
 
 /* Footer */
 .site-footer {
+  position: relative;
+  isolation: isolate;
   padding: 90px 0 40px;
   background: linear-gradient(160deg, var(--emerald) 0%, var(--emerald-deep) 100%);
   color: rgba(253, 251, 245, 0.8);
+  overflow: hidden;
 }
 .site-footer .logo.small { color: #FDFBF5; }
 .footer-inner-new { max-width: 980px; margin: 0 auto; }
+.section-watermark {
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.05;
+  object-fit: contain;
+}
+.site-footer .section-watermark {
+  bottom: 30px;
+  right: 5%;
+  width: 200px;
+  height: auto;
+}
+@media (max-width: 760px) {
+  .site-footer .section-watermark { width: 130px; right: 4%; }
+}
 
 .footer-divider { border: none; border-top: 1px solid var(--gold-soft); margin: 52px 0; }
 
@@ -1840,6 +1859,9 @@ a { color: var(--highlight); text-decoration: none; }
 /* Humanizing Advantage Discovery */
 .discovery-intro { padding: 60px 0; }
 .discovery-intro-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   max-width: 880px;
   margin: 0 auto;
   background: linear-gradient(160deg, var(--emerald) 0%, var(--emerald-deep) 100%);
@@ -1849,6 +1871,15 @@ a { color: var(--highlight); text-decoration: none; }
   text-align: center;
   color: var(--cream);
   box-shadow: 0 20px 60px rgba(8, 42, 32, 0.35);
+}
+.discovery-intro-card .section-watermark {
+  top: 24px;
+  right: 24px;
+  width: 160px;
+  height: auto;
+}
+@media (max-width: 640px) {
+  .discovery-intro-card .section-watermark { width: 100px; top: 16px; right: 16px; }
 }
 .discovery-eyebrow { color: #FF8C00 !important; }
 .discovery-heading { font-size: clamp(2rem, 4vw, 2.8rem); margin: 0 0 0.8em; color: var(--cream); }
