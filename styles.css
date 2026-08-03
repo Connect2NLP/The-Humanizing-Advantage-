@@ -1345,12 +1345,12 @@ a { color: var(--highlight); text-decoration: none; }
 /* Connect2 */
 .connect2-grid {
   display: grid;
-  grid-template-columns: 343px 1fr;
+  grid-template-columns: 394px 1fr;
   gap: 50px;
   align-items: center;
 }
 .connect2-inner { max-width: 720px; }
-.logo-placeholder { max-width: 343px; }
+.logo-placeholder { max-width: 394px; }
 
 /* Contact */
 .contact-inner { max-width: 640px; }
@@ -1663,7 +1663,7 @@ a { color: var(--highlight); text-decoration: none; }
   .hero-photo-col { justify-self: start; max-width: 320px; }
   .speaking-grid { grid-template-columns: 1fr; }
   .connect2-grid { grid-template-columns: 1fr; }
-  .logo-placeholder { max-width: 250px; }
+  .logo-placeholder { max-width: 287px; }
   .form-row { grid-template-columns: 1fr; }
 }
 
