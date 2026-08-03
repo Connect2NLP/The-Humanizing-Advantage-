@@ -114,11 +114,11 @@ if (bgAudioToggle && bgAudioMount) {
   // anywhere on the page, not just the toggle button itself.
   const startOnFirstInteraction = () => {
     startBgAudio();
-    ['click', 'touchstart', 'keydown', 'scroll'].forEach((evt) => {
+    ['click', 'touchstart', 'keydown'].forEach((evt) => {
       window.removeEventListener(evt, startOnFirstInteraction);
     });
   };
-  ['click', 'touchstart', 'keydown', 'scroll'].forEach((evt) => {
+  ['click', 'touchstart', 'keydown'].forEach((evt) => {
     window.addEventListener(evt, startOnFirstInteraction, { once: true, passive: true });
   });
 }
