@@ -1838,13 +1838,33 @@ a { color: var(--highlight); text-decoration: none; }
   .nav-cta { align-self: flex-start; }
   .hero { padding: 90px 0 60px; }
   .section { padding: 60px 0; }
-  .nav-dropdown { width: 100%; }
+  .nav-dropdown { width: 100%; display: flex; flex-wrap: wrap; align-items: center; }
+  .nav-dropdown-toggle { flex: 1 1 auto; }
+  .nav-dropdown-caret {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    margin: -6px -8px -6px 0;
+    background: none;
+    border: none;
+    color: var(--text);
+    cursor: pointer;
+    transition: transform 0.25s ease;
+  }
+  .nav-dropdown-caret svg { width: 18px; height: 18px; }
+  .nav-dropdown.open .nav-dropdown-caret { transform: rotate(180deg); }
   .nav-dropdown-menu {
     display: flex;
+    flex-basis: 100%;
     position: static;
-    margin-top: 8px;
+    margin-top: 0;
     padding: 0 0 0 14px;
     min-width: 0;
+    max-height: 0;
+    overflow: hidden;
     background: none;
     backdrop-filter: none;
     border: none;
@@ -1853,7 +1873,12 @@ a { color: var(--highlight); text-decoration: none; }
     visibility: visible;
     pointer-events: auto;
     transform: none;
+    transition: max-height 0.3s ease;
   }
+  .nav-dropdown.open .nav-dropdown-menu { max-height: 600px; margin-top: 8px; }
+}
+@media (min-width: 761px) {
+  .nav-dropdown-caret { display: none; }
 }
 
 /* Humanizing Advantage Discovery */

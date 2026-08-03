@@ -15,6 +15,14 @@ mainNav.querySelectorAll('a').forEach((link) => {
   });
 });
 
+mainNav.querySelectorAll('.nav-dropdown-caret').forEach((caret) => {
+  caret.addEventListener('click', () => {
+    const dropdown = caret.closest('.nav-dropdown');
+    const isOpen = dropdown.classList.toggle('open');
+    caret.setAttribute('aria-expanded', String(isOpen));
+  });
+});
+
 const typewriters = document.querySelectorAll('[data-typewriter]');
 if (typewriters.length && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   const queue = [];
