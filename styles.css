@@ -271,6 +271,7 @@ a { color: var(--highlight); text-decoration: none; }
   inset: 0;
   background: linear-gradient(180deg, rgba(0, 41, 50, 0.47), rgba(0, 41, 50, 0.57) 55%, rgba(0, 41, 50, 0.78));
 }
+.video-hero.no-gradient .video-hero-scrim { display: none; }
 .hero-sound-toggle {
   position: fixed;
   right: 24px;
