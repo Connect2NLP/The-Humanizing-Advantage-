@@ -288,9 +288,9 @@ if (discoveryOpenBtn && discoveryOverlay && discoveryForm && discoveryBody) {
     const firstName = (discoveryForm.querySelector('[name="first_name"]').value || '').trim();
     const formData = new FormData(discoveryForm);
     const body = new URLSearchParams(formData).toString();
-    fetch('/', {
+    fetch('https://formsubmit.co/ajax/julian@connect2nlp.com', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'Accept': 'application/json' },
       body,
     }).catch(() => {
       console.warn('Discovery form submission failed to send; showing results anyway.');
