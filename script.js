@@ -317,3 +317,24 @@ if (contactForm) {
     formNote.textContent = 'Thanks, this form isn\'t connected yet. Email julian@connect2nlp.com directly for now.';
   });
 }
+
+const newsletterForm = document.getElementById('newsletterForm');
+const newsletterNote = document.getElementById('newsletterNote');
+
+if (newsletterForm) {
+  newsletterForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const formData = new FormData(newsletterForm);
+    const body = new URLSearchParams(formData).toString();
+    fetch('https://formsubmit.co/ajax/julian@connect2nlp.com', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'Accept': 'application/json' },
+      body,
+    }).catch(() => {
+      console.warn('Newsletter signup failed to send.');
+    }).finally(() => {
+      newsletterForm.hidden = true;
+      if (newsletterNote) newsletterNote.hidden = false;
+    });
+  });
+}
