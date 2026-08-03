@@ -1345,7 +1345,7 @@ a { color: var(--highlight); text-decoration: none; }
 /* Connect2 */
 .connect2-grid {
   display: grid;
-  grid-template-columns: 220px 1fr;
+  grid-template-columns: 286px 1fr;
   gap: 50px;
   align-items: center;
 }
