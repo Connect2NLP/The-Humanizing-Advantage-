@@ -1350,7 +1350,7 @@ a { color: var(--highlight); text-decoration: none; }
   align-items: center;
 }
 .connect2-inner { max-width: 720px; }
-.logo-placeholder { max-width: 220px; }
+.logo-placeholder { max-width: 286px; }
 
 /* Contact */
 .contact-inner { max-width: 640px; }
@@ -1663,7 +1663,7 @@ a { color: var(--highlight); text-decoration: none; }
   .hero-photo-col { justify-self: start; max-width: 320px; }
   .speaking-grid { grid-template-columns: 1fr; }
   .connect2-grid { grid-template-columns: 1fr; }
-  .logo-placeholder { max-width: 160px; }
+  .logo-placeholder { max-width: 208px; }
   .form-row { grid-template-columns: 1fr; }
 }
 
