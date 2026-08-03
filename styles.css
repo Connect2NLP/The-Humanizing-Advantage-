@@ -764,6 +764,8 @@ a { color: var(--highlight); text-decoration: none; }
 }
 
 .section-alt {
+  position: relative;
+  isolation: isolate;
   background: var(--navy);
   border-top: 1px solid rgba(253, 251, 245, 0.12);
   border-bottom: 1px solid rgba(253, 251, 245, 0.12);
@@ -775,6 +777,21 @@ a { color: var(--highlight); text-decoration: none; }
   --chip-bg: rgba(253, 251, 245, 0.09);
   --shadow-card: 0 6px 20px rgba(0, 0, 0, 0.28);
   --shadow-card-hover: 0 14px 32px rgba(0, 0, 0, 0.38);
+}
+.section-alt::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background-image: url("assets/watermark-mark.png");
+  background-repeat: no-repeat;
+  background-position: right 3% bottom 24px;
+  background-size: 180px auto;
+  opacity: 0.05;
+  pointer-events: none;
+}
+@media (max-width: 760px) {
+  .section-alt::after { background-size: 110px auto; background-position: right 4% bottom 16px; }
 }
 .section-alt h2, .section-alt h3 {
   background-image: linear-gradient(100deg, var(--accent) 0%, var(--accent) 35%, #FF8F73 50%, var(--accent) 65%, var(--accent) 100%);
