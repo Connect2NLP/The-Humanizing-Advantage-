@@ -1027,6 +1027,7 @@ a { color: var(--highlight); text-decoration: none; }
   text-transform: uppercase;
 }
 .closing-statement.is-sentence-case { text-transform: none; }
+.closing-statement.is-thin { font-weight: 100; }
 .closing-statement.is-metallic {
   font-weight: 400;
   background-image: linear-gradient(100deg, #8C0D02 0%, #FF1403 18%, #FF8F73 36%, #BD0503 52%, #FF1403 68%, #FF8F73 84%, #8C0D02 100%);
@@ -1420,11 +1421,7 @@ a { color: var(--highlight); text-decoration: none; }
   background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
-  animation: heroSparkle 8s linear infinite, successCtaPulse 2.4s ease-in-out infinite;
-}
-@keyframes successCtaPulse {
-  0%, 100% { transform: scale(1); text-shadow: 0 0 14px rgba(255, 20, 3, 0.3); }
-  50% { transform: scale(1.03); text-shadow: 0 0 30px rgba(255, 122, 46, 0.7), 0 0 50px rgba(255, 20, 3, 0.4); }
+  animation: heroSparkle 8s linear infinite;
 }
 @media (prefers-reduced-motion: reduce) {
   .success-video-cta { animation: none; text-shadow: 0 0 18px rgba(255, 20, 3, 0.35); }
@@ -1721,6 +1718,7 @@ a { color: var(--highlight); text-decoration: none; }
 }
 .discovery-eyebrow { color: var(--gold) !important; }
 .discovery-heading { font-size: clamp(2rem, 4vw, 2.8rem); margin: 0 0 0.8em; color: var(--cream); }
+.discovery-heading.is-orange { color: #FF8C00; }
 .discovery-copy { max-width: 620px; margin: 0 auto; text-align: left; }
 .discovery-copy p { margin: 0 0 1.1em; color: rgba(253, 251, 245, 0.86); line-height: 1.7; }
 .discovery-question { font-size: 1.4rem; font-weight: 600; color: var(--gold); text-align: center; }
