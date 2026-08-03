@@ -37,6 +37,8 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+button, input, textarea, select { font-family: inherit; }
+
 h1, h2, h3 {
   font-family: "Ubuntu", "Segoe UI", sans-serif;
   line-height: 1.15;
@@ -1955,10 +1957,10 @@ a { color: var(--highlight); text-decoration: none; }
 }
 .discovery-close {
   position: absolute;
-  top: 16px;
-  right: 16px;
-  width: 36px;
-  height: 36px;
+  top: 12px;
+  right: 12px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   border: none;
   background: rgba(0, 41, 50, 0.08);
