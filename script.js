@@ -78,48 +78,26 @@ document.querySelectorAll('.video-embed[data-video-id]').forEach((embed) => {
 
 const bgAudioToggle = document.getElementById('bgAudioToggle');
 const bgAudioMount = document.getElementById('bgAudioMount');
-const BG_AUDIO_START_SECONDS = 9;
 if (bgAudioToggle && bgAudioMount) {
   let bgAudioIframe = null;
-  const startBgAudio = () => {
-    if (bgAudioIframe) return;
-    const videoId = bgAudioMount.getAttribute('data-video-id');
-    bgAudioIframe = document.createElement('iframe');
-    bgAudioIframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&loop=1&playlist=${videoId}&controls=0&modestbranding=1&start=${BG_AUDIO_START_SECONDS}`;
-    bgAudioIframe.setAttribute('title', 'Background music');
-    bgAudioIframe.setAttribute('allow', 'autoplay; encrypted-media');
-    bgAudioMount.appendChild(bgAudioIframe);
-    bgAudioToggle.classList.add('is-playing');
-    bgAudioToggle.setAttribute('aria-pressed', 'true');
-    bgAudioToggle.setAttribute('aria-label', 'Pause background music');
-  };
-  const stopBgAudio = () => {
-    if (!bgAudioIframe) return;
-    bgAudioIframe.remove();
-    bgAudioIframe = null;
-    bgAudioToggle.classList.remove('is-playing');
-    bgAudioToggle.setAttribute('aria-pressed', 'false');
-    bgAudioToggle.setAttribute('aria-label', 'Play background music');
-  };
   bgAudioToggle.addEventListener('click', () => {
-    if (bgAudioIframe) {
-      stopBgAudio();
+    if (!bgAudioIframe) {
+      const videoId = bgAudioMount.getAttribute('data-video-id');
+      bgAudioIframe = document.createElement('iframe');
+      bgAudioIframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&loop=1&playlist=${videoId}&controls=0&modestbranding=1`;
+      bgAudioIframe.setAttribute('title', 'Background music');
+      bgAudioIframe.setAttribute('allow', 'autoplay; encrypted-media');
+      bgAudioMount.appendChild(bgAudioIframe);
+      bgAudioToggle.classList.add('is-playing');
+      bgAudioToggle.setAttribute('aria-pressed', 'true');
+      bgAudioToggle.setAttribute('aria-label', 'Pause background music');
     } else {
-      startBgAudio();
+      bgAudioIframe.remove();
+      bgAudioIframe = null;
+      bgAudioToggle.classList.remove('is-playing');
+      bgAudioToggle.setAttribute('aria-pressed', 'false');
+      bgAudioToggle.setAttribute('aria-label', 'Play background music');
     }
-  });
-
-  // Browsers block unmuted autoplay before any user gesture. As a best-effort
-  // "automatic" start, kick off audio on the visitor's first interaction
-  // anywhere on the page, not just the toggle button itself.
-  const startOnFirstInteraction = () => {
-    startBgAudio();
-    ['click', 'touchstart', 'keydown'].forEach((evt) => {
-      window.removeEventListener(evt, startOnFirstInteraction);
-    });
-  };
-  ['click', 'touchstart', 'keydown'].forEach((evt) => {
-    window.addEventListener(evt, startOnFirstInteraction, { once: true, passive: true });
   });
 }
 
