@@ -763,6 +763,10 @@ a { color: var(--highlight); text-decoration: none; }
   padding-left: 0.7em;
   line-height: 1.7;
 }
+.story-punch.is-crimson {
+  color: #CE1001;
+  border-left-color: #CE1001;
+}
 
 .section-alt {
   position: relative;
