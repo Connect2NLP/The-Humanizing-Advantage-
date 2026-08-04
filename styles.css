@@ -17,10 +17,10 @@
   --shadow-card-hover: 0 14px 32px rgba(0, 41, 50, 0.14);
   --max-width: 1120px;
   --radius: 10px;
-  --emerald: #12525C;
+  --emerald: #0D3F47;
   --emerald-deep: #002932;
-  --gold: #D4AF37;
-  --gold-soft: rgba(212, 175, 55, 0.35);
+  --gold: #CE1001;
+  --gold-soft: rgba(206, 16, 1, 0.35);
   font-size: 16px;
 }
 
