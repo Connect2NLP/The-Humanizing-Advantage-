@@ -870,10 +870,32 @@ a { color: var(--highlight); text-decoration: none; }
 .about-values ul { margin: 0; padding-left: 20px; color: var(--text-muted); columns: 2; column-gap: 32px; }
 .about-values li { margin-bottom: 0.7em; break-inside: avoid; }
 
+.about-split {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 64px;
+  align-items: start;
+  margin-bottom: 56px;
+}
+.about-sidebar {
+  position: sticky;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.about-sidebar .about-photo { max-width: 100%; margin: 0; }
+.about-main .story-copy { max-width: none; margin-top: 1.6em; }
+
 .bio-facts {
-  max-width: 780px;
-  margin: 0 auto 50px;
-  text-align: center;
+  text-align: left;
+}
+.bio-facts .btn-primary { display: inline-block; margin-bottom: 1.4em; }
+.bio-facts .bio-pullquote { margin-left: 0; margin-right: 0; }
+.bio-facts .bio-chips { justify-content: flex-start; }
+@media (max-width: 900px) {
+  .about-split { grid-template-columns: 1fr; gap: 36px; }
+  .about-sidebar { position: static; }
 }
 .bio-title {
   font-size: 1.1rem;
