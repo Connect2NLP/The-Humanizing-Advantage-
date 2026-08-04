@@ -68,6 +68,16 @@
   </div>
 </header>
 
+<audio id="bgAudio" src="assets/trance-euphoria.mp3" loop autoplay></audio>
+<button type="button" id="audioToggle" class="audio-toggle is-playing" aria-label="Pause background music" aria-pressed="true">
+  <span class="audio-toggle-icon audio-toggle-icon-pause">
+    <span></span><span></span>
+  </span>
+  <span class="audio-toggle-icon audio-toggle-icon-play">
+    <span></span>
+  </span>
+</button>
+
 <main>
 <section class="video-hero scrim-20">
   <video class="video-hero-media" autoplay muted loop playsinline poster="assets/tha-hero-services-poster.jpg">
@@ -362,5 +372,40 @@
 </footer>
 
 <script src="script.js"></script>
+<script>
+(function () {
+  var audio = document.getElementById('bgAudio');
+  var toggle = document.getElementById('audioToggle');
+  if (!audio || !toggle) return;
+
+  function setPlayingState(isPlaying) {
+    toggle.classList.toggle('is-playing', isPlaying);
+    toggle.setAttribute('aria-pressed', String(isPlaying));
+    toggle.setAttribute('aria-label', isPlaying ? 'Pause background music' : 'Play background music');
+  }
+
+  audio.play().then(function () {
+    setPlayingState(true);
+  }).catch(function () {
+    setPlayingState(false);
+    var resumeOnInteract = function () {
+      audio.play().then(function () { setPlayingState(true); }).catch(function () {});
+      document.removeEventListener('click', resumeOnInteract);
+      document.removeEventListener('keydown', resumeOnInteract);
+    };
+    document.addEventListener('click', resumeOnInteract);
+    document.addEventListener('keydown', resumeOnInteract);
+  });
+
+  toggle.addEventListener('click', function () {
+    if (audio.paused) {
+      audio.play().then(function () { setPlayingState(true); }).catch(function () {});
+    } else {
+      audio.pause();
+      setPlayingState(false);
+    }
+  });
+})();
+</script>
 </body>
 </html>

@@ -2240,3 +2240,51 @@ a { color: var(--highlight); text-decoration: none; }
   .discovery-step-shake { animation: none; }
   .discovery-progress-bar { transition: none; }
 }
+
+/* Background audio toggle (services.html) */
+.audio-toggle {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 500;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid rgba(253, 251, 245, 0.4);
+  background: var(--accent);
+  color: #FDFBF5;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+  animation: audioToggleFlash 1.6s ease-in-out infinite;
+}
+.audio-toggle:hover { transform: translateY(-2px); }
+.audio-toggle-icon { display: none; align-items: center; justify-content: center; }
+.audio-toggle.is-playing .audio-toggle-icon-pause { display: flex; }
+.audio-toggle:not(.is-playing) .audio-toggle-icon-play { display: flex; }
+.audio-toggle-icon-pause span {
+  display: inline-block;
+  width: 5px;
+  height: 18px;
+  margin: 0 2px;
+  background: #FDFBF5;
+  border-radius: 1px;
+}
+.audio-toggle-icon-play span {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 3px;
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  border-left: 15px solid #FDFBF5;
+}
+@keyframes audioToggleFlash {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 20, 3, 0.65); background: var(--accent); }
+  50% { box-shadow: 0 0 0 14px rgba(255, 20, 3, 0); background: var(--accent-soft); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .audio-toggle { animation: none; }
+}
