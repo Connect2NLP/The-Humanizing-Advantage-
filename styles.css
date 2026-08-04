@@ -1313,7 +1313,7 @@ a { color: var(--highlight); text-decoration: none; }
   -webkit-text-fill-color: initial;
 }
 .flip-card-back {
-  background: var(--accent);
+  background: #CE1001;
   color: var(--cream);
   transform: rotateY(180deg);
   gap: 14px;
