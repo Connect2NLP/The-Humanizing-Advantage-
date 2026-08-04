@@ -24,6 +24,8 @@
   font-size: 16px;
 }
 
+#about { --text: #000000; --text-muted: #000000; }
+
 * { box-sizing: border-box; }
 
 html { scroll-behavior: smooth; }
