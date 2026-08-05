@@ -591,6 +591,15 @@ a { color: var(--highlight); text-decoration: none; }
   transform: translateY(55px);
   animation: heroLine2Rise 1.8s ease-out 3s forwards, heroGlow 3s ease-in-out 4.8s infinite;
 }
+.video-hero-subtitle-bottom {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  bottom: 36px;
+  margin: 0;
+  padding: 0 32px;
+}
 .video-hero-subtitle-tagline {
   margin: 0 0 0.5em;
   font-size: clamp(0.9rem, 2.52vw, 2.28rem);
@@ -1077,7 +1086,7 @@ a { color: var(--highlight); text-decoration: none; }
 .compare-col.is-navy li { color: rgba(253, 251, 245, 0.8); border-bottom-color: rgba(253, 251, 245, 0.15); }
 .compare-col-logo {
   display: block;
-  height: 52px;
+  height: 68px;
   width: auto;
   margin: 0 0 1.4em;
 }
