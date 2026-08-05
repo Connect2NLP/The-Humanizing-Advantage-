@@ -2297,3 +2297,70 @@ a { color: var(--highlight); text-decoration: none; }
 @media (prefers-reduced-motion: reduce) {
   .audio-toggle { animation: none; }
 }
+
+/* Full-screen photo slideshow hero (about.html) */
+.photo-hero-slideshow {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background: var(--navy);
+}
+.photo-hero-slideshow-track {
+  position: absolute;
+  inset: 0;
+}
+.photo-hero-slideshow-track img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  animation: photoHeroSlideshowFade 20s infinite;
+}
+.photo-hero-slideshow-track img:nth-child(1) { animation-delay: 0s; }
+.photo-hero-slideshow-track img:nth-child(2) { animation-delay: 5s; }
+.photo-hero-slideshow-track img:nth-child(3) { animation-delay: 10s; }
+.photo-hero-slideshow-track img:nth-child(4) { animation-delay: 15s; }
+@keyframes photoHeroSlideshowFade {
+  0% { opacity: 0; }
+  7.5% { opacity: 1; }
+  22.5% { opacity: 1; }
+  30% { opacity: 0; }
+  100% { opacity: 0; }
+}
+.photo-hero-slideshow-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 41, 50, 0.5), rgba(0, 41, 50, 0.35) 45%, rgba(0, 41, 50, 0.75));
+}
+.photo-hero-slideshow-content {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 32px;
+}
+.photo-hero-slideshow-content .eyebrow { color: var(--accent-bright); }
+.photo-hero-slideshow-content h1 {
+  color: #FDFBF5;
+  background: none;
+  -webkit-background-clip: initial;
+  background-clip: initial;
+  -webkit-text-fill-color: initial;
+  animation: none;
+}
+.photo-hero-slideshow-intro {
+  margin: 0.6em auto 0;
+  max-width: 640px;
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+  color: rgba(253, 251, 245, 0.88);
+}
+@media (prefers-reduced-motion: reduce) {
+  .photo-hero-slideshow-track img { animation: none; opacity: 1; }
+  .photo-hero-slideshow-track img:not(:first-child) { display: none; }
+}
