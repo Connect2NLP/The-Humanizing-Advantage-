@@ -1110,6 +1110,21 @@ a { color: var(--highlight); text-decoration: none; }
   object-fit: contain;
   display: block;
 }
+.compare-col-caption {
+  margin: 0.9em 0 0;
+  text-align: center;
+  font-family: "Ubuntu", "Segoe UI", sans-serif;
+  font-weight: 100;
+  font-size: 1.05rem;
+}
+.compare-col-caption.is-orange { color: var(--accent); }
+.compare-col-caption.is-duo {
+  background-image: linear-gradient(100deg, #179C6E 0%, #179C6E 40%, #1864AB 60%, #1864AB 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
 @media (max-width: 760px) {
   .compare-grid { grid-template-columns: 1fr; }
 }
@@ -2339,68 +2354,65 @@ a { color: var(--highlight); text-decoration: none; }
 }
 
 /* Full-screen photo slideshow hero (about.html) */
-.photo-hero-slideshow {
+.photo-hero-frame {
+  padding: 3px;
+  border-radius: calc(var(--radius) + 3px);
+  background-image: linear-gradient(100deg, #8C0D02 0%, #FF1403 18%, #FF8F73 36%, #BD0503 52%, #FF1403 68%, #FF8F73 84%, #8C0D02 100%);
+  background-size: 260% 100%;
+  animation: heroSparkle 9s linear infinite, photoHeroFrameGlow 3.2s ease-in-out infinite;
+}
+.photo-hero-frame-inner {
   position: relative;
-  height: 100vh;
-  width: 100%;
+  border-radius: var(--radius);
   overflow: hidden;
   background: var(--navy);
 }
-.photo-hero-slideshow-track {
+.photo-hero-slide-duotone::after {
+  content: "";
   position: absolute;
   inset: 0;
+  background: linear-gradient(135deg, rgba(23, 156, 110, 0.325), rgba(24, 100, 171, 0.325));
+  mix-blend-mode: color;
+  pointer-events: none;
 }
-.photo-hero-slideshow-track img {
+.photo-hero-frame-scrim {
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  animation: photoHeroSlideshowFade 20s infinite;
+  background: linear-gradient(180deg, rgba(0, 41, 50, 0.05) 0%, rgba(0, 41, 50, 0.15) 55%, rgba(0, 41, 50, 0.85) 100%);
+  pointer-events: none;
 }
-.photo-hero-slideshow-track img:nth-child(1) { animation-delay: 0s; }
-.photo-hero-slideshow-track img:nth-child(2) { animation-delay: 5s; }
-.photo-hero-slideshow-track img:nth-child(3) { animation-delay: 10s; }
-.photo-hero-slideshow-track img:nth-child(4) { animation-delay: 15s; }
-@keyframes photoHeroSlideshowFade {
-  0% { opacity: 0; }
-  7.5% { opacity: 1; }
-  22.5% { opacity: 1; }
-  30% { opacity: 0; }
-  100% { opacity: 0; }
-}
-.photo-hero-slideshow-scrim {
+.photo-hero-frame-content {
   position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(0, 41, 50, 0.5), rgba(0, 41, 50, 0.35) 45%, rgba(0, 41, 50, 0.75));
-}
-.photo-hero-slideshow-content {
-  position: relative;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 24px 24px 20px;
   text-align: center;
-  padding: 0 32px;
 }
-.photo-hero-slideshow-content .eyebrow { color: var(--accent-bright); }
-.photo-hero-slideshow-content h1 {
+.photo-hero-frame-content .eyebrow {
+  color: var(--accent);
+  font-size: 1.01rem;
+  margin-bottom: 0.4em;
+  animation: none;
+}
+.photo-hero-frame-content h1 {
   color: #FDFBF5;
   background: none;
   -webkit-background-clip: initial;
   background-clip: initial;
   -webkit-text-fill-color: initial;
   animation: none;
+  margin: 0;
+  font-size: clamp(1.8rem, 4.5vw, 3rem);
 }
-.photo-hero-slideshow-intro {
-  margin: 0.6em auto 0;
-  max-width: 640px;
-  font-size: clamp(1.05rem, 2vw, 1.3rem);
-  color: rgba(253, 251, 245, 0.88);
+.photo-hero-frame-content .story-subheading {
+  margin: 0.3em 0 0;
+  font-size: clamp(0.95rem, 2vw, 1.2rem);
+}
+@keyframes photoHeroFrameGlow {
+  0%, 100% { box-shadow: 0 0 14px rgba(255, 20, 3, 0.4), 0 0 30px rgba(255, 20, 3, 0.18); }
+  50% { box-shadow: 0 0 26px rgba(255, 20, 3, 0.78), 0 0 56px rgba(255, 20, 3, 0.42); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .photo-hero-slideshow-track img { animation: none; opacity: 1; }
-  .photo-hero-slideshow-track img:not(:first-child) { display: none; }
+  .photo-hero-frame { animation: none; box-shadow: 0 0 16px rgba(255, 20, 3, 0.4); }
 }
