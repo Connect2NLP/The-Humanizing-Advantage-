@@ -1762,6 +1762,11 @@ a { color: var(--highlight); text-decoration: none; }
 @media (prefers-reduced-motion: reduce) {
   .question-shimmer-line { animation: none; text-shadow: 0 0 18px rgba(189, 5, 3, 0.35); }
 }
+.hero-subheading-plain {
+  margin: 1.6em 0 0;
+  font-size: 1.56rem;
+  animation: none;
+}
 .calm-page-hero-intro {
   max-width: 640px;
   margin-left: auto;
