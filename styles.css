@@ -771,7 +771,8 @@ a { color: var(--highlight); text-decoration: none; }
 .story-punch {
   display: inline-block;
   font-size: 1.15rem;
-  font-weight: 700;
+  font-family: "Ubuntu", "Segoe UI", sans-serif;
+  font-weight: 150;
   color: var(--highlight);
   border-left: 3px solid var(--accent);
   padding-left: 0.7em;
@@ -780,10 +781,6 @@ a { color: var(--highlight); text-decoration: none; }
 .story-punch.is-crimson {
   color: #CE1001;
   border-left-color: #CE1001;
-}
-.story-punch.is-ubuntu-150 {
-  font-family: "Ubuntu", "Segoe UI", sans-serif;
-  font-weight: 150;
 }
 
 .section-alt {
@@ -2134,7 +2131,14 @@ a { color: var(--highlight); text-decoration: none; }
 }
 .discovery-eyebrow { color: #FF8C00 !important; }
 .discovery-heading { font-size: clamp(2rem, 4vw, 2.8rem); margin: 0 0 0.8em; color: var(--cream); }
-.discovery-heading.is-orange { color: #FF8C00; }
+.discovery-heading.is-orange {
+  color: #FF8C00;
+  background: none;
+  -webkit-background-clip: initial;
+  background-clip: initial;
+  -webkit-text-fill-color: initial;
+  animation: none;
+}
 .discovery-copy { max-width: 620px; margin: 0 auto; text-align: left; }
 .discovery-copy p { margin: 0 0 1.1em; color: rgba(253, 251, 245, 0.86); line-height: 1.7; }
 .discovery-question { font-size: 1.4rem; font-weight: 600; color: var(--gold); text-align: center; }
