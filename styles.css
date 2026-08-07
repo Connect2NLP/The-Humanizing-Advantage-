@@ -781,6 +781,10 @@ a { color: var(--highlight); text-decoration: none; }
   color: #CE1001;
   border-left-color: #CE1001;
 }
+.story-punch.is-ubuntu-150 {
+  font-family: "Ubuntu", "Segoe UI", sans-serif;
+  font-weight: 150;
+}
 
 .section-alt {
   position: relative;
